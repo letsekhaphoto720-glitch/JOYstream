@@ -1,0 +1,22 @@
+:root{--bg:#0d1117;--card:#161b22;--gold:#f5a623}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:#eee;font-family:"Segoe UI",Roboto,sans-serif;margin:0}
+.navbar{background:rgba(13,17,23,.95);border-bottom:1px solid #222}
+.logo{font-weight:800;letter-spacing:2px}
+.logo span{color:var(--gold);font-weight:300}
+.nav-link:hover,.nav-link:focus{color:var(--gold)!important}
+
+.hero{min-height:75vh;padding-top:80px;background-image:url('Limkos.JPG'); background-size: cover; background-position: center; background-repeat: no-repeat;}
+
+.scroller{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px}
+.scroller .tcard{flex:0 0 170px}
+.tcard{background:var(--card);border:1px solid #222;color:#eee;cursor:pointer;transition:transform .2s,border-color .2s}
+.tcard:hover,.tcard:focus{transform:scale(1.04);border-color:var(--gold);outline:none}
+.tcard p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tcard img{aspect-ratio:2/3;object-fit:cover}
+.form-control,.form-select{background:var(--card);color:#eee;border-color:#333}
+.form-control:focus,.form-select:focus{background:var(--card);color:#eee}
+.accordion-item,.accordion-button{background:var(--card);color:#eee}
+.accordion-button:not(.collapsed){background:#1f2630;color:var(--gold)}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:none;z-index:2000}
+@media(max-width:576px){.hero{min-height:60vh}.display-3{font-size:2.2rem}}
