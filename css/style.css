@@ -6,7 +6,7 @@ body{background:var(--bg);color:#eee;font-family:"Segoe UI",Roboto,sans-serif;ma
 .logo span{color:var(--gold);font-weight:300}
 .nav-link:hover,.nav-link:focus{color:var(--gold)!important}
 
-.hero{min-height:75vh;padding-top:80px;background-image:url('Limkos.JPG'); background-size: cover; background-position: center; background-repeat: no-repeat;}
+.hero{min-height:75vh;padding-top:80px;background-image:url('Limkos.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;}
 
 .scroller{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px}
 .scroller .tcard{flex:0 0 170px}
