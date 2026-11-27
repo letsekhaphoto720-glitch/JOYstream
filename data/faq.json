@@ -1,4 +1,30 @@
-[{"q":"Is Joy Stream a real service?","a":"No. It is a student project built to practise web design. All titles are samples."},
-{"q":"How does My List work?","a":"Press + My List on any title. Your list is saved in this browser using localStorage and stays after you refresh."},
-{"q":"Can I watch full films?","a":"Four titles link to legal Blender Foundation open movies on YouTube. Others show a Coming Soon notice."},
-{"q":"How do I contact support?","a":"Email help@joystream.example (demo address)."}]
+[
+ {
+  "q": "Is Joy Stream a real service?",
+  "a": "No. It is a student project built to practise web design. The built-in titles are samples."
+ },
+ {
+  "q": "How do accounts work?",
+  "a": "Create an account in the Sign In section. Your account, password (stored only as a salted hash) and uploads are saved inside this browser on this device, so they are not available on other devices."
+ },
+ {
+  "q": "Can I watch full films?",
+  "a": "Four titles play legal Blender Foundation open movies from YouTube. Every other built-in title has a short original placeholder trailer made for this project. Videos you upload play in full."
+ },
+ {
+  "q": "How do I add my own video and poster?",
+  "a": "Sign in, open My Uploads and press Upload new. Choose a video file and a poster image from your device. No YouTube link is needed."
+ },
+ {
+  "q": "Can I edit or delete my uploads?",
+  "a": "Yes. Open any title you uploaded and press Edit or Delete, or use the Edit button on its card. You can only change titles that belong to your account."
+ },
+ {
+  "q": "How does My List work?",
+  "a": "Press + My List on any title. The list is saved per account in this browser and stays after you refresh."
+ },
+ {
+  "q": "How do I contact support?",
+  "a": "Email help@joystream.example (demo address)."
+ }
+]

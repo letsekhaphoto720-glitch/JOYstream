@@ -1,22 +1,93 @@
-:root{--bg:#0d1117;--card:#161b22;--gold:#f5a623}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
+/* ==========================================================================
+   Joy Stream theme: green
+   Change the palette here and the whole site follows.
+   ========================================================================== */
+:root{
+ --bg:#08120d;          /* page background */
+ --card:#0f1c15;        /* cards, inputs, modals */
+ --surface:#15261c;     /* raised / active surfaces */
+ --line:#1f3328;        /* borders and dividers */
+ --accent:#22c55e;      /* buttons, links, highlights */
+ --accent-hover:#4ade80;
+ --accent-ink:#052e16;  /* text placed on top of the accent colour */
+ --gutter:clamp(1rem,4vw,2rem);
+ --section-gap:clamp(2.5rem,6vw,4rem);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--bg);color:#eee;font-family:"Segoe UI",Roboto,sans-serif;margin:0}
-.navbar{background:rgba(13,17,23,.95);border-bottom:1px solid #222}
+.navbar{background:rgba(8,18,13,.95);border-bottom:1px solid var(--line)}
 .logo{font-weight:800;letter-spacing:2px}
-.logo span{color:var(--gold);font-weight:300}
-.nav-link:hover,.nav-link:focus{color:var(--gold)!important}
+.logo span{color:var(--accent);font-weight:300}
+.nav-link:hover,.nav-link:focus,.nav-link.active{color:var(--accent-hover)!important}
 
-.hero{min-height:75vh;padding-top:80px;background-image:url('Limkos.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;}
+/* ---- Accent components (replace Bootstrap's yellow "warning" styles) ---- */
+.btn-accent{--bs-btn-color:var(--accent-ink);--bs-btn-bg:var(--accent);--bs-btn-border-color:var(--accent);
+ --bs-btn-hover-color:var(--accent-ink);--bs-btn-hover-bg:var(--accent-hover);--bs-btn-hover-border-color:var(--accent-hover);
+ --bs-btn-active-color:var(--accent-ink);--bs-btn-active-bg:var(--accent-hover);--bs-btn-active-border-color:var(--accent-hover);
+ --bs-btn-disabled-color:var(--accent-ink);--bs-btn-disabled-bg:var(--accent);--bs-btn-disabled-border-color:var(--accent);
+ --bs-btn-focus-shadow-rgb:34,197,94;font-weight:600}
+.btn-outline-accent{--bs-btn-color:var(--accent);--bs-btn-border-color:var(--accent);
+ --bs-btn-hover-color:var(--accent-ink);--bs-btn-hover-bg:var(--accent);--bs-btn-hover-border-color:var(--accent);
+ --bs-btn-active-color:var(--accent-ink);--bs-btn-active-bg:var(--accent);--bs-btn-active-border-color:var(--accent);
+ --bs-btn-focus-shadow-rgb:34,197,94}
+.text-accent{color:var(--accent)!important}
+.link-accent{color:var(--accent)!important;text-decoration-color:rgba(34,197,94,.5)}
+.link-accent:hover{color:var(--accent-hover)!important}
+.bg-accent{background-color:var(--accent)!important;color:var(--accent-ink)!important}
+.badge-yours{position:absolute;top:8px;left:8px;background:var(--surface);color:var(--accent-hover);border:1px solid var(--accent)}
+.alert-info{--bs-alert-color:#bbf7d0;--bs-alert-bg:#0f2a1b;--bs-alert-border-color:#166534}
+.alert-secondary{--bs-alert-color:#cfe5d8;--bs-alert-bg:var(--card);--bs-alert-border-color:var(--line)}
+.alert-warning{--bs-alert-color:#fde68a;--bs-alert-bg:#2a2410;--bs-alert-border-color:#854d0e}
+.toast-box{background:var(--surface);color:#eafff1;border:1px solid var(--accent)}
 
-.scroller{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px}
-.scroller .tcard{flex:0 0 170px}
-.tcard{background:var(--card);border:1px solid #222;color:#eee;cursor:pointer;transition:transform .2s,border-color .2s}
-.tcard:hover,.tcard:focus{transform:scale(1.04);border-color:var(--gold);outline:none}
+/* Bootstrap "dark" surfaces follow the theme */
+.bg-dark,.modal-content{background-color:var(--card)!important}
+.modal-header,.modal-footer,.border-secondary{border-color:var(--line)!important}
+
+/* Page container: consistent side margins on every screen size */
+.container{padding-inline:var(--gutter)}
+
+/* Hero: image path is relative to THIS css file; overlay keeps text readable */
+.hero{min-height:80vh;padding-top:96px;background:linear-gradient(to top,var(--bg) 2%,rgba(8,18,13,0) 40%),linear-gradient(to right,rgba(8,18,13,.6),rgba(8,18,13,0) 62%),url('hero.jpg') center 70%/cover no-repeat}
+.hero .container{padding-bottom:var(--section-gap)}
+
+/* Inner pages sit below the fixed navbar */
+.page-top{padding-top:calc(72px + var(--section-gap)/2)}
+
+/* One spacing rule for every block instead of mixed mt-4 / mt-5 */
+.block{margin-top:var(--section-gap)}
+.block>h2{margin-bottom:1rem}
+main>.container{padding-bottom:var(--section-gap)}
+.tcard video,.ratio video{background:#000;object-fit:contain}
+
+/* Scroller: padding so hovered (scaled) cards and focus rings aren't clipped */
+.scroller{display:flex;gap:16px;overflow-x:auto;padding:10px 4px 16px;scroll-snap-type:x proximity;scrollbar-color:var(--accent) var(--card)}
+.scroller .tcard{flex:0 0 170px;scroll-snap-align:start}
+.tcard{position:relative;background:var(--card);border:1px solid var(--line);color:#eee;cursor:pointer;transition:transform .2s,border-color .2s;height:100%}
+.tcard:hover,.tcard:focus{transform:scale(1.04);border-color:var(--accent);outline:none}
+.tcard .card-body{padding:.85rem}
 .tcard p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tcard img{aspect-ratio:2/3;object-fit:cover}
-.form-control,.form-select{background:var(--card);color:#eee;border-color:#333}
-.form-control:focus,.form-select:focus{background:var(--card);color:#eee}
-.accordion-item,.accordion-button{background:var(--card);color:#eee}
-.accordion-button:not(.collapsed){background:#1f2630;color:var(--gold)}
-#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:none;z-index:2000}
-@media(max-width:576px){.hero{min-height:60vh}.display-3{font-size:2.2rem}}
+.tcard img{aspect-ratio:2/3;object-fit:cover;background:var(--surface)}
+.tcard .btn+.btn{margin-left:.35rem}
+
+/* Forms */
+.form-control,.form-select{background:var(--card);color:#eee;border-color:var(--line)}
+.form-control:focus,.form-select:focus{background:var(--card);color:#eee;border-color:var(--accent);box-shadow:0 0 0 .2rem rgba(34,197,94,.25)}
+.form-control::file-selector-button{background:var(--surface);color:#eee;border:0;border-right:1px solid var(--line)}
+.form-check-input:checked{background-color:var(--accent);border-color:var(--accent)}
+.form-check-input:focus{border-color:var(--accent);box-shadow:0 0 0 .2rem rgba(34,197,94,.25)}
+.narrow{max-width:520px}
+.poster-prev{width:120px;aspect-ratio:2/3;object-fit:cover;border-radius:.5rem;background:var(--surface)}
+
+/* FAQ accordion */
+.accordion-item,.accordion-button{background:var(--card);color:#eee;border-color:var(--line)}
+.accordion-button:not(.collapsed){background:var(--surface);color:var(--accent-hover);box-shadow:none}
+.accordion-button:focus{border-color:var(--accent);box-shadow:0 0 0 .2rem rgba(34,197,94,.25)}
+
+/* Sign in / Create account tabs */
+.nav-pills .nav-link{color:#cfe5d8}
+.nav-pills .nav-link.active{background:var(--accent);color:var(--accent-ink)!important}
+
+footer{padding-inline:var(--gutter);border-top:1px solid var(--line)}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:none;z-index:2000;max-width:calc(100% - 2*var(--gutter))}
+@media(max-width:576px){.hero{min-height:60vh}.display-3{font-size:2.2rem}.scroller .tcard{flex-basis:150px}}
