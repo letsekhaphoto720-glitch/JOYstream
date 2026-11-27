@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account | Joy Stream</title>
+<link href="vendor/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="account">
+<header id="siteHeader"></header>
+<main>
+<div class="container page-top">
+ <section aria-labelledby="t6">
+  <h1 id="t6" class="h2 mb-3">Account</h1>
+  <div class="alert alert-info narrow">Accounts and uploads are stored in this browser on this device only. There is no server, so you cannot sign in from another device.</div>
+
+  <div id="authBox" class="narrow">
+   <ul class="nav nav-pills mb-3" role="tablist">
+    <li class="nav-item"><button class="nav-link active" id="tabLogin" type="button" data-bs-toggle="pill" data-bs-target="#paneLogin">Sign in</button></li>
+    <li class="nav-item"><button class="nav-link" id="tabSignup" type="button" data-bs-toggle="pill" data-bs-target="#paneSignup">Create account</button></li>
+   </ul>
+   <div class="tab-content">
+    <div class="tab-pane fade show active" id="paneLogin">
+     <form id="loginForm" novalidate>
+      <div class="mb-3"><label for="liEmail" class="form-label">Email address</label><input id="liEmail" type="email" class="form-control" autocomplete="email" required><div class="invalid-feedback">Enter a valid email address.</div></div>
+      <div class="mb-3"><label for="liPw" class="form-label">Password</label><input id="liPw" type="password" class="form-control" autocomplete="current-password" required><div class="invalid-feedback">Enter your password.</div></div>
+      <button class="btn btn-accent" type="submit">Sign in</button>
+     </form>
+    </div>
+    <div class="tab-pane fade" id="paneSignup">
+     <form id="signupForm" novalidate>
+      <div class="mb-3"><label for="name" class="form-label">Display name</label><input id="name" class="form-control" autocomplete="nickname" required minlength="3" maxlength="30"><div class="invalid-feedback">Enter at least 3 characters.</div></div>
+      <div class="mb-3"><label for="email" class="form-label">Email address</label><input id="email" type="email" class="form-control" autocomplete="email" required><div class="invalid-feedback">Enter a valid email address.</div></div>
+      <div class="mb-3"><label for="pw" class="form-label">Password</label><input id="pw" type="password" class="form-control" autocomplete="new-password" required minlength="8"><div class="invalid-feedback">Use at least 8 characters.</div></div>
+      <div class="mb-3"><label for="pw2" class="form-label">Confirm password</label><input id="pw2" type="password" class="form-control" autocomplete="new-password" required><div class="invalid-feedback" id="pw2fb">Passwords must match.</div></div>
+      <div class="mb-3"><label for="fav" class="form-label">Favourite type</label><select id="fav" class="form-select" required><option value="">Choose...</option><option>Film</option><option>Series</option><option>Documentary</option><option>Educational</option></select><div class="invalid-feedback">Please choose one.</div></div>
+      <button class="btn btn-accent" type="submit">Create account</button>
+     </form>
+    </div>
+   </div>
+  </div>
+
+  <div id="accountBox" class="narrow d-none">
+   <div class="card bg-dark text-light"><div class="card-body">
+    <p class="mb-1 text-secondary small">Signed in as</p>
+    <h2 class="h5" id="accName"></h2><p id="accEmail" class="text-secondary"></p>
+    <p id="accStats" class="small"></p>
+    <a class="btn btn-accent btn-sm me-2" href="uploads.html">My Uploads</a><a class="btn btn-outline-accent btn-sm me-2" href="mylist.html">My List</a>
+    <button id="logoutBtn" class="btn btn-outline-light btn-sm">Sign out</button>
+   </div></div>
+  </div>
+  <div id="formMsg" class="mt-3 narrow" role="status"></div>
+ </section>
+</div>
+</main>
+<div id="siteFooter"></div>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
